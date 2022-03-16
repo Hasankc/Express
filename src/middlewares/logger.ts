@@ -10,7 +10,7 @@ function logRequest(req: Request, res: Response, next:NextFunction) {
 
         const line = `${new DataTransfer().toLocaleString()}: ${req.method} ${req.path}\n`
         fs.appendFile(logPath, line, (err) => {
-            if(err) throw new Error('database failed to connect');
+            if(err)  new Error('database failed to connect');
 
         })
         next()
